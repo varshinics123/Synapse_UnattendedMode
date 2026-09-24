@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "0 9 * * 1-5"
+    - cron: "30 16 * * 1-5"
+      timezone: "Asia/Kolkata"
 
 jobs:
   monitor:
@@ -29,6 +30,6 @@ jobs:
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          SYNAPSE_ENDPOINT: ${{ vars.SYNAPSE_ENDPOINT }}
+          SYNAPSE_ENDPOINT: ${{ secrets.SYNAPSE_ENDPOINT }}
         run: |
           python synapse_monitor.py
