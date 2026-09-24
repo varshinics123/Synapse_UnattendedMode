@@ -14,7 +14,7 @@ CLIENT_ID = os.environ["AZURE_CLIENT_ID"]
 CLIENT_SECRET = os.environ["AZURE_CLIENT_SECRET"]
 
 # Your Synapse workspace development endpoint
-SYNAPSE_ENDPOINT = os.environ["SYNAPSE_ENDPOINT"]
+SYNAPSE_ENDPOINT = os.environ["SYNAPSE_ENDPOINT"].rstrip("/")
 
 
 # ============================================================
